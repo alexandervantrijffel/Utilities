@@ -1,4 +1,4 @@
 Utilities
 =========
 
-Shared C# Utility classes
+C# Utility classes
