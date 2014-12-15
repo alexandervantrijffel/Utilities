@@ -1,9 +1,8 @@
 ﻿using System;
 using FluentAssertions;
-using Structura.SharedComponents.Utilities;
 using Xunit;
 
-namespace Utilities.Tests
+namespace Structura.SharedComponents.Utilities.Tests
 {
     public class WhenChecking
     {
