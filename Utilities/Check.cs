@@ -56,10 +56,12 @@ namespace Structura.SharedComponents.Utilities
         /// <summary>
         /// Precondition check - should run regardless of preprocessor directives.
         /// </summary>
+        [DebuggerStepThrough]
         public static void Require(bool assertion)
         {
             Require(assertion, string.Empty);
         }
+        [DebuggerStepThrough]
         public static void Require(bool assertion, string messageFormatString, params object[] formatStringParameters)
         {
             Require<PreconditionException>(assertion, messageFormatString, formatStringParameters);
@@ -81,17 +83,17 @@ namespace Structura.SharedComponents.Utilities
         /// <summary>
         /// Precondition check - should run regardless of preprocessor directives.
         /// </summary>
-
+        [DebuggerStepThrough]
         public static void RequireNotNull(object o)
         {
             RequireNotNull(o, string.Empty);
         }
-
+        [DebuggerStepThrough]
         public static void RequireNotNull(dynamic o, string messageFormatString, params object[] formatStringParameters)
         {
             Require(o != null, messageFormatString, formatStringParameters);
         }
-
+        [DebuggerStepThrough]
         public static void RequireNotNullOrEmpty(ICollection value, string messageFormatString, params object[] formatStringParameters)
         {
             Require(value != null && value.Count > 0, messageFormatString, formatStringParameters);
@@ -159,6 +161,7 @@ namespace Structura.SharedComponents.Utilities
         /// <summary>
         /// Postcondition check.
         /// </summary>
+        [DebuggerStepThrough] 
         public static void Ensure(bool assertion)
         {
             Ensure(assertion, string.Empty);

@@ -56,6 +56,7 @@
     <Compile Include="FormatLogger.cs" />
     <Compile Include="IFormatLogger.cs" />
     <Compile Include="FormatLoggerAccessor.cs" />
+    <Compile Include="IInitializeAtStartup.cs" />
     <Compile Include="ReflectionExtensions.cs" />
     <Compile Include="ObjectToString.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
