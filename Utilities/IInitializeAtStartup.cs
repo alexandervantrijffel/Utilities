@@ -23,5 +23,10 @@ namespace Structura.SharedComponents.Utilities
                     ((IInitializeAtStartup)Activator.CreateInstance(startup)).Initialize();
             }
         }
+
+        public static void Execute(Func<Assembly[],IEnumerable<Assembly>> applicationAssembliesFilter)
+        {
+            Execute(applicationAssembliesFilter(AppDomain.CurrentDomain.GetAssemblies()));
+        }
     }
 }

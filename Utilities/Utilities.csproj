@@ -48,6 +48,7 @@
     <Reference Include="Microsoft.CSharp" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AssembliesPreloader.cs" />
     <Compile Include="Check.cs" />
     <Compile Include="ConfigurationHelper.cs" />
     <Compile Include="EnumExtensions.cs" />
