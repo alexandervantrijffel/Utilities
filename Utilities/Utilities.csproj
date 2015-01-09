@@ -46,15 +46,20 @@
     <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
     <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.XML" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AESEncryptor.cs" />
     <Compile Include="AssembliesPreloader.cs" />
     <Compile Include="Check.cs" />
     <Compile Include="ConfigurationHelper.cs" />
+    <Compile Include="DoubleExtensions.cs" />
+    <Compile Include="EnumerableExtensions.cs" />
     <Compile Include="EnumExtensions.cs" />
     <Compile Include="EnumHelper.cs" />
     <Compile Include="ExceptionExtensions.cs" />
     <Compile Include="FormatLogger.cs" />
+    <Compile Include="IAESEncryptor.cs" />
     <Compile Include="IFormatLogger.cs" />
     <Compile Include="FormatLoggerAccessor.cs" />
     <Compile Include="IInitializeAtStartup.cs" />
