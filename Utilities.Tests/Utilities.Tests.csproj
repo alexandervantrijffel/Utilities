@@ -58,6 +58,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="WhenChecking.cs" />
     <Compile Include="WhenInitializingAtStartup.cs" />
+    <Compile Include="WhenPreparingFileName.cs" />
     <Compile Include="WhenRetrievingConfiguration.cs" />
   </ItemGroup>
   <ItemGroup>
