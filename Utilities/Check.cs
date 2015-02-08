@@ -99,6 +99,11 @@ namespace Structura.SharedComponents.Utilities
             Require(value != null && value.Count > 0, messageFormatString, formatStringParameters);
         }
 
+        public static void RequireNotNullOrEmpty(string value, string messageFormatString, params object[] formatStringParameters) 
+        {
+            Require(value != null && !string.IsNullOrEmpty(value), messageFormatString, formatStringParameters);
+        }
+
         public static void RequireNotNull<TException, TObject>(dynamic o, string messageFormatString, params object[] formatStringParameters) where TException : Exception, new()
         {
             bool assertion = o != null;

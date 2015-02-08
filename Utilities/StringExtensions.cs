@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Linq;
+using System.Text.RegularExpressions;
 
 namespace Structura.SharedComponents.Utilities
 {
@@ -40,6 +41,11 @@ namespace Structura.SharedComponents.Utilities
             var r = new string(input.ToCharArray().Reverse().ToArray());
             return
                 r.Select(t => baseChars.IndexOf(t)).Select((charIndex, i) => charIndex * (long)Math.Pow(srcBase, i)).Sum();
+        }
+
+        public static string RemoveIllegalFileNameCharacters(this string input)
+        {
+            return Regex.Replace(input, "[<>:\"/\\\\\\|\\?\\*]", "");
         }
     }
 }
