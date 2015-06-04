@@ -3,12 +3,26 @@ using System.IO;
 using System.Security.Cryptography;
 using System.Text;
 using System.Xml;
-using SharedUtilities;
 
 namespace Structura.SharedComponents.Utilities
 {
+    public interface IAesEncryptor
+    {
+        void LoadKeyFile();
+        string Encrypt(string plainText);
+        string Decrypt(string encryptedText);
+        string IVAsString { get; set; }
+    }
+
     public class AesEncryptor : IAesEncryptor
     {
+        private readonly ISettingsRetriever _settingsRetriever;
+
+        public AesEncryptor(ISettingsRetriever settingsRetriever)
+        {
+            _settingsRetriever = settingsRetriever;
+        }
+
         private RijndaelManaged _rijndael = null;
         public byte[] Key { get; set; }
         public byte[] IV { get; set; }
@@ -28,7 +42,7 @@ namespace Structura.SharedComponents.Utilities
 
         public void LoadKeyFile()
         {
-            LoadKeyFile(ConfigurationHelper.Get<string>("EncryptionKeyFile"));
+            LoadKeyFile(_settingsRetriever.Get<string>("EncryptionKeyFile"));
         }
 
         public void LoadKeyFile(string xmlFile)
