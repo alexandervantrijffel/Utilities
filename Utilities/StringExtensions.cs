@@ -42,10 +42,5 @@ namespace Structura.SharedComponents.Utilities
             return
                 r.Select(t => baseChars.IndexOf(t)).Select((charIndex, i) => charIndex * (long)Math.Pow(srcBase, i)).Sum();
         }
-
-        public static string RemoveIllegalFileNameCharacters(this string input)
-        {
-            return Regex.Replace(input, "[<>:\"/\\\\\\|\\?\\*]", "");
-        }
     }
 }

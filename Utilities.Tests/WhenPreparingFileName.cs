@@ -12,7 +12,7 @@ namespace Structura.SharedComponents.Utilities.Tests
             var input = "<t>h:i\"s/\\|?*";
 
             // Act
-            var result = input.RemoveIllegalFileNameCharacters();
+            var result = PathUtilities.RemoveIllegalFileNameCharacters(input);
             
             // Assert
             result.Should().Be("this", "not expected result string: " + result);
