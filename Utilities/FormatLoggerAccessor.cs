@@ -5,8 +5,6 @@ namespace Structura.SharedComponents.Utilities
 {
     public class FormatLoggerAccessor
     {
-        private static readonly FormatLoggerAccessor instance;
-
         // Explicit static constructor to tell C# compiler
         // not to mark type as beforefieldinit
         static FormatLoggerAccessor()
