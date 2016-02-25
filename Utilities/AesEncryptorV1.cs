@@ -6,7 +6,7 @@ using System.Xml;
 
 namespace Structura.SharedComponents.Utilities
 {
-    public interface IAesEncryptor
+    public interface IAesEncryptorV1
     {
         void LoadKeyFile();
         string Encrypt(string plainText);
@@ -14,11 +14,11 @@ namespace Structura.SharedComponents.Utilities
         string IVAsString { get; set; }
     }
 
-    public class AesEncryptor : IAesEncryptor
+    public class AesEncryptorV1 : IAesEncryptorV1
     {
         private readonly ISettingsRetriever _settingsRetriever;
 
-        public AesEncryptor(ISettingsRetriever settingsRetriever)
+        public AesEncryptorV1(ISettingsRetriever settingsRetriever)
         {
             _settingsRetriever = settingsRetriever;
         }
@@ -35,7 +35,7 @@ namespace Structura.SharedComponents.Utilities
             set { IV = Convert.FromBase64String(value); }
         }
 
-        public AesEncryptor()
+        public AesEncryptorV1()
         {
             _rijndael = new RijndaelManaged {Mode = CipherMode.CBC};
         }

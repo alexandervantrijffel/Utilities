@@ -6,7 +6,7 @@ using System.Reflection;
 
 namespace Structura.SharedComponents.Utilities
 {
-    public static class EnumHelper
+	public static class EnumHelper
     {
         public class EnumValueInfo
         {
