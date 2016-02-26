@@ -75,6 +75,10 @@
     <Compile Include="Randomizer.cs" />
     <Compile Include="SettingsRetriever.cs" />
     <Compile Include="StringExtensions.cs" />
+    <Compile Include="DateTimeExtensions.cs" />
+    <Compile Include="ValueObjects\Percentage.cs" />
+    <Compile Include="ValueObjects\Period.cs" />
+    <Compile Include="ValueObjects\ValueObjectBase.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
