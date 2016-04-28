@@ -2,7 +2,7 @@
 using System.IO;
 using System.Reflection;
 
-namespace Structura.SharedComponents.Utilities.Tests
+namespace Structura.Shared.Utilities.Tests
 {
 	[Serializable]
 	public class EncryptData

@@ -1,4 +1,4 @@
-namespace Structura.SharedComponents.Utilities.ValueObjects
+namespace Structura.Shared.Utilities.ValueObjects
 {
     public abstract class ValueObjectBase<T> where T : class
     {

@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Structura.SharedComponents.Utilities.ValueObjects
+namespace Structura.Shared.Utilities.ValueObjects
 {
     public class PeriodException : Exception
     {

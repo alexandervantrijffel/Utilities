@@ -1,10 +1,9 @@
 ﻿using System;
 using System.IO;
-using System.Linq;
 using System.Reflection;
 using System.Text.RegularExpressions;
 
-namespace Structura.SharedComponents.Utilities
+namespace Structura.Shared.Utilities
 {
     public static class PathUtilities
     {

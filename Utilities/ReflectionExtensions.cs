@@ -4,7 +4,7 @@ using System.Linq;
 using System.Linq.Expressions;
 using System.Reflection;
 
-namespace Structura.SharedComponents.Utilities
+namespace Structura.Shared.Utilities
 {
     public static class ReflectionExtensions
     {

@@ -2,7 +2,7 @@ using System;
 using System.IO;
 using System.Security.Cryptography;
 
-namespace Structura.SharedComponents.Utilities
+namespace Structura.Shared.Utilities
 {
 	[Serializable]
 	public class CryptedDataWrapper

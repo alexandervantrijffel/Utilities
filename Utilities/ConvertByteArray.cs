@@ -1,7 +1,7 @@
 ﻿using System.IO;
 using System.Runtime.Serialization.Formatters.Binary;
 
-namespace Structura.SharedComponents.Utilities
+namespace Structura.Shared.Utilities
 {
 	public static class ConvertByteArray
 	{

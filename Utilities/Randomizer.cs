@@ -4,7 +4,7 @@ using System.Linq;
 using System.Security.Cryptography;
 using System.Text;
 
-namespace Structura.SharedComponents.Utilities
+namespace Structura.Shared.Utilities
 {
     public class Randomizer
     {

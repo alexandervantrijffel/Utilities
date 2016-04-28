@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
 
-namespace Structura.SharedComponents.Utilities
+namespace Structura.Shared.Utilities
 {
     public interface IInitializeAtStartup
     {

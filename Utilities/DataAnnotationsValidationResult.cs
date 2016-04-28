@@ -2,7 +2,7 @@
 using System.ComponentModel.DataAnnotations;
 using System.Text;
 
-namespace Structura.Ptb.Utilities.Validation
+namespace Structura.Shared.Utilities
 {
     public class ValidationResultEx
     {

@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace SharedUtilities
+namespace Structura.Shared.Utilities
 {
     public static class ExceptionExtensions
     {

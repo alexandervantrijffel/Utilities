@@ -3,7 +3,7 @@ using System.ComponentModel;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Diagnostics;
 
-namespace Structura.SharedComponents.Utilities.ValueObjects
+namespace Structura.Shared.Utilities.ValueObjects
 {
     // ReSharper disable PossibleInvalidOperationException
     [ComplexType]

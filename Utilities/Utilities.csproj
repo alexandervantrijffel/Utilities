@@ -55,6 +55,7 @@
     <Compile Include="AesEncrypter.cs" />
     <Compile Include="AesEncryptorV1.cs" />
     <Compile Include="AssembliesPreloader.cs" />
+    <Compile Include="AsyncHelper.cs" />
     <Compile Include="Check.cs" />
     <Compile Include="ConvertByteArray.cs" />
     <Compile Include="DataAnnotationsValidationResult.cs" />

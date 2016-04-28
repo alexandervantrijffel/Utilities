@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 
-namespace Structura.SharedComponents.Utilities
+namespace Structura.Shared.Utilities
 {
     public static class ListExtensions
     {

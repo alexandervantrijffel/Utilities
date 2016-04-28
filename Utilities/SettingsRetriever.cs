@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Configuration;
 
-namespace Structura.SharedComponents.Utilities
+namespace Structura.Shared.Utilities
 {
     public interface ISettingsRetriever
     {

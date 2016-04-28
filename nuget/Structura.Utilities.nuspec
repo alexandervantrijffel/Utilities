@@ -3,12 +3,12 @@
   <metadata>
     <id>Structura.Shared.Utilities</id>
 	<title>Structura shared .NET utilities</title>
-    <version>1.0.0</version>
+    <version>1.0.1</version>
     <authors>Alexander van Trijffel</authors>
     <projectUrl>https://github.com/alexandervantrijffel/utilities</projectUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <description>Various utilities for C#.NET.</description>
-    <releaseNotes>Initial release.</releaseNotes>
+    <releaseNotes>Added AsyncHelper.</releaseNotes>
 	<tags>logging conversion encryption file string</tags>
 	<dependencies>
 		<dependency id="log4net" version="2.0.1" />

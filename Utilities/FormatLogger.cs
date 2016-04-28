@@ -1,9 +1,8 @@
 ﻿using System;
 using System.Diagnostics;
 using log4net;
-using SharedUtilities;
 
-namespace Structura.SharedComponents.Utilities
+namespace Structura.Shared.Utilities
 {
     public interface IFormatLogger
     {

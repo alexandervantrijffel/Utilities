@@ -1,6 +1,6 @@
 using System;
 
-namespace Structura.SharedComponents.Utilities
+namespace Structura.Shared.Utilities
 {
     public static class DateTimeExtensions
     {

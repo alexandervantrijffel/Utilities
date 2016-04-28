@@ -2,7 +2,7 @@
 using FluentAssertions;
 using Xunit;
 
-namespace Structura.SharedComponents.Utilities.Tests
+namespace Structura.Shared.Utilities.Tests
 {
     public class InitializeStub : IInitializeAtStartup
     {

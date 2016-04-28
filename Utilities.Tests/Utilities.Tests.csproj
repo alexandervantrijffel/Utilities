@@ -7,8 +7,8 @@
     <ProjectGuid>{92E12708-55ED-42A2-84DF-AE365FB85373}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Structura.SharedComponents.Utilities.Tests</RootNamespace>
-    <AssemblyName>Structura.SharedComponents.Utilities.Tests</AssemblyName>
+    <RootNamespace>Structura.Shared.Utilities.Tests</RootNamespace>
+    <AssemblyName>Structura.Shared.Utilities.Tests</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <TargetFrameworkProfile />
