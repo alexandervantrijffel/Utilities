@@ -2,6 +2,7 @@
 <package >
   <metadata>
     <id>Structura.Shared.Utilities</id>
+	<title>Structura shared .NET utilities</title>
     <version>1.0.0</version>
     <authors>Alexander van Trijffel</authors>
     <projectUrl>https://github.com/alexandervantrijffel/utilities</projectUrl>
