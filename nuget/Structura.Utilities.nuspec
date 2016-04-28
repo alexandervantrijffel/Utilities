@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<package >
+  <metadata>
+    <id>Structura.Shared.Utilities</id>
+    <version>1.0.0</version>
+    <authors>Alexander van Trijffel</authors>
+    <projectUrl>https://github.com/alexandervantrijffel/utilities</projectUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>Various utilities for C#.NET.</description>
+    <releaseNotes>Initial release.</releaseNotes>
+	<tags>logging conversion encryption file string</tags>
+	<dependencies>
+		<dependency id="log4net" version="2.0.1" />
+		<dependency id="Newtonsoft.Json" version="6.0.1" />
+	</dependencies>
+  </metadata>
+  <files>
+		<file src="..\Utilities\bin\Release\Structura.Shared.Utilities.dll" target="lib" />
+	</files>
+</package>

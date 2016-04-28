@@ -7,8 +7,8 @@
     <ProjectGuid>{7B7BFF4F-7867-490B-BF1A-0794C3635750}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Structura.SharedComponents.Utilities</RootNamespace>
-    <AssemblyName>Structura.SharedComponents.Utilities</AssemblyName>
+    <RootNamespace>Structura.Shared.Utilities</RootNamespace>
+    <AssemblyName>Structura.Shared.Utilities</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <TargetFrameworkProfile />
