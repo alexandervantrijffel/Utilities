@@ -58,6 +58,7 @@
   <ItemGroup>
     <Compile Include="AesEncrypterTest.cs" />
     <Compile Include="CurrentDirectoryForUnitTests.cs" />
+    <Compile Include="PerformanceTester.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="WhenChecking.cs" />
     <Compile Include="WhenInitializingAtStartup.cs" />
