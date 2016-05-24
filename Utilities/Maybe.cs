@@ -27,7 +27,7 @@ namespace Structura.Shared.Utilities
                     var method = new StackFrame(1, true).GetMethod().Name;
                     var type = typeof(T).Name;
                     throw new InvalidOperationException(
-                        string.Format($"Maybe.Value requested in {method} while the value is null. Type of requested value is {type}.");
+						$"Maybe.Value requested in {method} while the value is null. Type of requested value is {type}.");
                 }
 
                 return _value;

@@ -52,6 +52,11 @@ namespace Structura.Shared.Utilities
             //return TimeZoneInfo.ConvertTimeToUtc(dateTime, timeZone);
         }
 
+	    public static string ToIso8601(this DateTime dateTime)
+	    {
+		    return dateTime.ToString("s", System.Globalization.CultureInfo.InvariantCulture);
+	    }
+
         public static DateTime ToLocalTime(this DateTime dateTime, string localTimeZoneId)
         {
             TimeZoneInfo timeZone = TimeZoneInfo.FindSystemTimeZoneById(localTimeZoneId);
