@@ -3,7 +3,7 @@
   <metadata>
     <id>Structura.Shared.Utilities</id>
 	<title>Structura shared .NET utilities</title>
-    <version>1.0.1</version>
+    <version>1.0.2</version>
     <authors>Alexander van Trijffel</authors>
     <projectUrl>https://github.com/alexandervantrijffel/utilities</projectUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
