@@ -1,6 +1,6 @@
 using System;
 
-namespace Structura.SharedComponents.Utilities
+namespace Structura.Shared.Utilities
 {
     public static class DateTimeExtensions
     {
@@ -51,6 +51,11 @@ namespace Structura.SharedComponents.Utilities
 
             //return TimeZoneInfo.ConvertTimeToUtc(dateTime, timeZone);
         }
+
+	    public static string ToIso8601(this DateTime dateTime)
+	    {
+		    return dateTime.ToString("s", System.Globalization.CultureInfo.InvariantCulture);
+	    }
 
         public static DateTime ToLocalTime(this DateTime dateTime, string localTimeZoneId)
         {

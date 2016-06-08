@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 
-namespace Structura.Ptb.Utilities.Validation
+namespace Structura.Shared.Utilities
 {
     public class DataAnnotationsValidatorEx
     {

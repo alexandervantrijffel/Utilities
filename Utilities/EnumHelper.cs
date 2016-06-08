@@ -4,9 +4,9 @@ using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Reflection;
 
-namespace Structura.SharedComponents.Utilities
+namespace Structura.Shared.Utilities
 {
-    public static class EnumHelper
+	public static class EnumHelper
     {
         public class EnumValueInfo
         {

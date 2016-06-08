@@ -1,21 +1,15 @@
 ﻿using System;
 using log4net;
 
-namespace Structura.SharedComponents.Utilities
+namespace Structura.Shared.Utilities
 {
-    public class FormatLoggerAccessor
+    public static class FormatLoggerAccessor
     {
-        // Explicit static constructor to tell C# compiler
-        // not to mark type as beforefieldinit
-        static FormatLoggerAccessor()
-        {
-        }
-
-        public static Func<IFormatLogger> Instance;
+        public static Func<IFormatLogger> Locate;
 
         public static void Initialize(Func<ILog> getLogger)
         {
-            Instance = () => new FormatLogger(getLogger());
+            Locate = () => new FormatLogger(getLogger());
         }
     }
 }
