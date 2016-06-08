@@ -1,5 +1,4 @@
-﻿using System;
-using FluentAssertions;
+﻿using Shouldly;
 using Xunit;
 
 namespace Structura.Shared.Utilities.Tests
@@ -9,13 +8,16 @@ namespace Structura.Shared.Utilities.Tests
         [Fact]
         public void AppSetting_that_does_not_exist_throws_correct_error()
         {
-            // Arrange
-            Action a = () => new SettingsRetriever().Get<string>("DoesNotExist");
-            
-            // Act
-            // Assert|
-            a.ShouldThrow<PreconditionException>().WithMessage("AppSetting with name DoesNotExist not found. Please check the application configuration file.. At method Structura.SharedComponents.Utilities.SettingsRetriever.Get.");
-            
+            Should
+                .Throw<PreconditionException>(() => new SettingsRetriever().Get<string>("DoesNotExist"))
+                .Message.StartsWith(
+                    "AppSetting with name DoesNotExist not found. Please check the application configuration file.. At method ");
+        }
+
+        [Fact]
+        public void Existing_appsetting_is_found()
+        {
+            new SettingsRetriever().Get<string>("DoesExist").ShouldBe("empty");
         }
     }
 }

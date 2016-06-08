@@ -1,4 +1,4 @@
-﻿using FluentAssertions;
+﻿using Shouldly;
 using Xunit;
 
 namespace Structura.Shared.Utilities.Tests
@@ -8,14 +8,9 @@ namespace Structura.Shared.Utilities.Tests
         [Fact]
         public void AllIllegalCharactersAreRemoved()
         {
-            // Arrange
-            var input = "<t>h:i\"s/\\|?*";
-
-            // Act
-            var result = PathUtilities.RemoveIllegalFileNameCharacters(input);
-            
-            // Assert
-            result.Should().Be("this", "not expected result string: " + result);
+            PathUtilities
+                .RemoveIllegalFileNameCharacters("<t>h:i\"s/\\|?*")
+                .ShouldBe("this");
         }
     }
 }

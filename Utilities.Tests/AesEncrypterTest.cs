@@ -1,6 +1,6 @@
 ﻿using System;
 using System.Runtime.Serialization;
-using FluentAssertions;
+using Shouldly;
 using Xunit;
 
 namespace Structura.Shared.Utilities.Tests
@@ -18,8 +18,8 @@ namespace Structura.Shared.Utilities.Tests
 			const string password = "VerySecret!";
 			var crypted = new AesEncrypter(password).Encrypt(data);
 			var unencrypted = new AesEncrypter(password).Decrypt<EncryptData>(crypted);
-			unencrypted.Date.Ticks.Should().Be(data.Date.Ticks);
-			unencrypted.SecretText.Should().Be(data.SecretText);
+			unencrypted.Date.Ticks.ShouldBe(data.Date.Ticks);
+			unencrypted.SecretText.ShouldBe(data.SecretText);
 		}
 
 		[Fact]
@@ -28,10 +28,10 @@ namespace Structura.Shared.Utilities.Tests
 			var data = new EncryptData { Date = DateTime.Now.Subtract(TimeSpan.FromDays(5)), SecretText = "I am a fan of Chopin." };
 			const string password = "VerySecret!";
 			var crypted = new AesEncrypter(password).Encrypt(data);
-			Action a = () => ConvertByteArray.ByteArrayToObject<EncryptData>(crypted.CipherBytes);
-			var message = a.ShouldThrow<SerializationException>().And.Message;
-			(message.Contains("The input stream is not a valid binary format") || message.Contains("does not contain a valid BinaryHeader"))
-				.Should().BeTrue();
+		    var msg =
+		        Should.Throw<SerializationException>(
+		            () => ConvertByteArray.ByteArrayToObject<EncryptData>(crypted.CipherBytes)).Message;
+            (msg.Contains("The input stream is not a valid binary format") || msg.Contains("does not contain a valid BinaryHeader")).ShouldBeTrue();
 		}
 	}
 }

@@ -1,5 +1,5 @@
 ﻿using System.Reflection;
-using FluentAssertions;
+using Shouldly;
 using Xunit;
 
 namespace Structura.Shared.Utilities.Tests
@@ -18,12 +18,8 @@ namespace Structura.Shared.Utilities.Tests
         [Fact]
         public void ShouldExecuteInitialize()
         {
-            // Arrange
-            // Act
             InitializeAtStartupBootstrapper.Execute(new []{Assembly.GetExecutingAssembly()});
-
-            // Assert
-            InitializeStub.Initialized.Should().BeTrue();
+            InitializeStub.Initialized.ShouldBeTrue();
         }
     }
 }
