@@ -13,6 +13,7 @@ namespace Structura.Shared.Utilities
                 if (equalityComparer(coll[i], item))
                 {
                     coll[i] = item;
+                    return;
                 }
             }
             coll.Add(item);
