@@ -20,11 +20,25 @@ namespace Structura.Shared.Utilities
             return Path.Combine(dirPath, relativePath);
         }
 
-        public static string GenerateUniqueFileName(string directory, string filespec)
+        /// <summary>
+        /// If the given fileName exists, (number) will be added to the file title to find a unique filename.
+        /// e.g. myfile.zip becomes myfile(1).zip
+        /// </summary>
+        public static string GenerateUniqueFilePath(string directoryName, string fileName)
         {
-            Check.Require(filespec.Contains("{0}"), "Filespec must contain {0}");
-            var fileName = string.Format(filespec, Randomizer.NextInt(1, Int32.MaxValue));
-            return !File.Exists(Path.Combine(directory, fileName)) ? fileName : GenerateUniqueFileName(directory, filespec);
+            var destination = Path.Combine(directoryName, fileName);
+            if (!File.Exists(destination)) return destination;
+            return GenerateUniqueFilePath(
+                Path.Combine(directoryName,
+                    $"{Path.GetFileNameWithoutExtension(fileName)}({{0}}){Path.GetExtension(fileName)}"));
+        }
+
+        private static string GenerateUniqueFilePath(string filePath, int startingNumber = 1)
+        {
+            var destination = string.Format(filePath, startingNumber);
+            return !File.Exists(destination)
+                ? destination
+                : GenerateUniqueFilePath(filePath, ++startingNumber);
         }
 
         public static string RemoveIllegalFileNameCharacters(string input)
