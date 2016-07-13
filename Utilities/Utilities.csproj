@@ -69,6 +69,7 @@
     <Compile Include="FormatLoggerAccessor.cs" />
     <Compile Include="IInitializeAtStartup.cs" />
     <Compile Include="ImageResizer.cs" />
+    <Compile Include="InMemoryCache.cs" />
     <Compile Include="ListExtensions.cs" />
     <Compile Include="Maybe.cs" />
     <Compile Include="NonNullable.cs" />
