@@ -50,8 +50,8 @@ namespace Structura.Shared.Utilities
             var rex = new Regex(@"<([\w\s]+)>");
             foreach (FieldInfo f in fields)
             {
-                sb.Append("\t");
-                sb.Append(rex.Matches(f.Name)[0].Groups[1].Value);
+                var matches = rex.Matches(f.Name);
+                sb.Append((matches.Count > 0) ? rex.Matches(f.Name)[0].Groups[1].Value : f.Name.Replace("field_", string.Empty));
                 sb.Append(": ");
                 sb.Append(f.GetValue(o));
                 sb.Append("\r\n");
