@@ -44,7 +44,7 @@ namespace Structura.Shared.Utilities
 
         private static string GetValue(dynamic theValue)
         {
-            if (theValue == null)
+            if (((Type)theValue.GetType()).IsClass && Object.ReferenceEquals(null, theValue))
             {
                 return "NULL";
             }
