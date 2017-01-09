@@ -19,5 +19,12 @@ namespace Structura.Shared.Utilities.Tests
             var dto = new ItemWithCollection { Guids = new List<Guid> { Guid.NewGuid() } };
             ObjectToString.DumpTypeAndFields(dto).ShouldContain(dto.Guids.First().ToString());
         }
+
+        [Fact]
+        public void Dumps_string_without_meta_data()
+        {
+            var s = "This is allright.";
+            ObjectToString.DumpTypeAndFields(s).ShouldBe(s);
+        }
     }
 }
