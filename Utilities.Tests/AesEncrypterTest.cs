@@ -5,7 +5,7 @@ using Xunit;
 
 namespace Structura.Shared.Utilities.Tests
 {
-	public class AesEncrypterTest
+    public class AesEncrypterTest
 	{
 		/// <summary>
 		/// Encrypts An EncryptData object with a DateTime and decr
