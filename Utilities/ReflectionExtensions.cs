@@ -41,7 +41,7 @@ namespace Structura.Shared.Utilities
                 }
             }
 
-            throw new Exception("No key attribute found for object " + ObjectToString.DumpTypeAndFields(o));
+            throw new Exception("No key attribute found for object " + new ContentsAsString(o));
         }
 
        
