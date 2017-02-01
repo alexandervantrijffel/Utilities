@@ -51,7 +51,7 @@ namespace Structura.Shared.Utilities
                 KeyValuePair<object, object> keyValue = CastFrom(o);
                 return GetValue(keyValue.Key) + ", " + GetValue(keyValue.Value);
             }
-            if (type.IsPrimitive || type.Namespace.StartsWith("System"))
+            if (type.IsPrimitive || (!string.IsNullOrWhiteSpace(type.Namespace) && type.Namespace.StartsWith("System")))
             {
                 return GetValue(o);
             }

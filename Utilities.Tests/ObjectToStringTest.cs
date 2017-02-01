@@ -53,6 +53,15 @@ namespace Structura.Shared.Utilities.Tests
             string result = new ContentsAsString(data);
             result.ShouldContain("FirstItem");
         }
+
+        [Fact]
+        public void DumpsDynamicObject()
+        {
+            var @dynamic = new { Field1 = "Value1", Field2 = "Value2" };
+            var result = new ContentsAsString(@dynamic).Value;
+            result.ShouldContain("Field2");
+            result.ShouldContain("Value2");
+        }
     }
 
     public enum AnEnum
