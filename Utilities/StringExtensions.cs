@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Globalization;
 using System.Linq;
 
 namespace Structura.Shared.Utilities
@@ -49,6 +50,21 @@ namespace Structura.Shared.Utilities
                 return input.Substring(0, input.Length - suffixToRemove.Length);
             }
             return input;
+        }
+
+        public static bool TryParseAsDateTimeUtc(this string s, out DateTime dt)
+        {
+            var utcFormats = new[] {
+                          "yyyy-MM-ddThh:mm:ssZ",
+                          "yyyy-MM-ddThh:mm:ss.ffZ",
+                          "yyyy-MM-ddThh:mm:ss.fffZ",
+                          "yyyy-MM-ddThh:mm:ss.ffffZ",
+                          "yyyy-MM-ddThh:mm:ss.fffffZ",
+                          "yyyy-MM-ddThh:mm:ss.ffffffZ",
+                          "yyyy-MM-ddThh:mm:ss.fffffffZ",
+                          "o"
+                };
+            return DateTime.TryParseExact(s, utcFormats, CultureInfo.InvariantCulture, DateTimeStyles.RoundtripKind, out dt);
         }
     }
 }
