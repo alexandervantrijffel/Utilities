@@ -66,5 +66,10 @@ namespace Structura.Shared.Utilities
                 };
             return DateTime.TryParseExact(s, utcFormats, CultureInfo.InvariantCulture, DateTimeStyles.RoundtripKind, out dt);
         }
+
+        public static string RemoveSubstring(this string s, string stringToBeRemoved)
+        {
+            return s.Replace(stringToBeRemoved, string.Empty);
+        }
     }
 }
