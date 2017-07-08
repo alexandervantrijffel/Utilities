@@ -36,14 +36,12 @@ namespace Structura.Shared.Utilities
 
         public ILog TheLogger { get; set; }
 
-        protected string CallingMethodName
-        {
-            get { return new StackFrame(2, true).GetMethod().Name; }
-        }
+        protected string CallingMethodName => new StackFrame(2, true).GetMethod().Name;
+
         protected string FormattedString(string messageFormatString, params object[] formatStringParameters)
         {
             return formatStringParameters.Length > 0
-                                    ? String.Format(messageFormatString, formatStringParameters)
+                                    ? string.Format(messageFormatString, formatStringParameters)
                                     : messageFormatString;
         }
         /// <summary>
@@ -51,10 +49,8 @@ namespace Structura.Shared.Utilities
         /// </summary>
         public void Info(Exception ex, string messageFormatString, params object[] formatStringParameters)
         {
-            string fullMessage = String.Format("A business logic error occured: {0} ({1}). {2}. At: {3}"
-                                               , ex.Message, ex.Message.GetType().Name
-                                               , FormattedString(messageFormatString, formatStringParameters)
-                                               , ex.StackTrace);
+            var fullMessage =
+                $"A business logic error occured: {ex.Message} ({ex.Message.GetType().Name}). {FormattedString(messageFormatString, formatStringParameters)}. At: {ex.StackTrace}";
             TheLogger.Info(CallingMethodName + " " + fullMessage);
         }
 

@@ -2,7 +2,7 @@
 using Shouldly;
 using Xunit;namespace Structura.Shared.Utilities.Tests
 {
-	public class InMemoryCacheTests : IUseFixture<InMemoryCache>
+	public class InMemoryCacheTests : IClassFixture<InMemoryCache>
 	{
 		private InMemoryCache _implementation;
 		private readonly object _someValue = new object();
