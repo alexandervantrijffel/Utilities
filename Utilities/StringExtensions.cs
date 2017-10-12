@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Globalization;
+using System.IO;
 using System.Linq;
 
 namespace Structura.Shared.Utilities
@@ -70,6 +71,17 @@ namespace Structura.Shared.Utilities
         public static string RemoveSubstring(this string s, string stringToBeRemoved)
         {
             return s.Replace(stringToBeRemoved, string.Empty);
+        }
+
+        public static string ToAbsolutePath(this string relativeOrAbsolutePath)
+        {
+            if (relativeOrAbsolutePath == null) throw new ArgumentNullException(nameof(relativeOrAbsolutePath));
+
+            var pathToMakeAbsolute = Path.IsPathRooted(relativeOrAbsolutePath)
+                ? relativeOrAbsolutePath
+                : Path.Combine(AppDomain.CurrentDomain.BaseDirectory, relativeOrAbsolutePath);
+
+            return Path.GetFullPath(pathToMakeAbsolute);
         }
     }
 }

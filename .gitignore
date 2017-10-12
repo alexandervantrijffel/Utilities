@@ -28,4 +28,5 @@ _ReSharper*/
 [Tt]est[Rr]esult*
 packages/*
 NugetPackages
-ReleasePackage.bat
+ReleasePackage.batstorage.ide
+storage.ide
