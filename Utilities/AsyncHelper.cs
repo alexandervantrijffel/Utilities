@@ -32,5 +32,21 @@ namespace Structura.Shared.Utilities
                 .GetAwaiter()
                 .GetResult();
         }
+
+        public static async Task<bool> RunWithTimeout(Task task, TimeSpan timeout)
+        {
+            var result = await Task.WhenAny(task, Task.Delay(timeout));
+            var taskCompleted = result == task;
+            if (taskCompleted) await task;
+            return taskCompleted;
+        }
+
+        public static async Task<(bool, TTaskReturnVal)> RunWithTimeout<TTaskReturnVal>(Task<TTaskReturnVal> task, TimeSpan timeout)
+        {
+            var result = await Task.WhenAny(task, Task.Delay(timeout));
+            var taskCompleted = result == task;
+            if (taskCompleted) await task;
+            return (taskCompleted, task.Result);
+        }
     }
 }

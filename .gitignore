@@ -30,3 +30,4 @@ packages/*
 NugetPackages
 ReleasePackage.batstorage.ide
 storage.ide
+.vs/
