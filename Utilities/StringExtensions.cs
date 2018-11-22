@@ -83,5 +83,105 @@ namespace Structura.Shared.Utilities
 
             return Path.GetFullPath(pathToMakeAbsolute);
         }
+
+        /// <summary>
+        /// Remove special character from string
+        /// </summary>
+        /// <param name="input">Input/string complete to be removed the special characters</param>
+        /// <param name="acceptWhiteSpace">True if white space will be a valid character</param>
+        /// <returns>String without special characters respecting the acception of white space</returns>
+        public static string RemoveSpecialCharacters(this string input, bool acceptWhiteSpace)
+        {
+            string ret = input;
+
+            if (string.IsNullOrEmpty(ret))
+                return ret;
+
+            ret = ret.Replace("'", " ").Replace("`", " ").Replace("´", " ").Replace("~", " ").Replace("^", " ").Replace(@"\", " ").Replace("¨", " ");
+
+            if (acceptWhiteSpace)
+                ret = System.Text.RegularExpressions.Regex.Replace(ret, @"[^0-9a-zA-ZéúíóáÉÚÍÓÁèùìòàÈÙÌÒÀõãñÕÃÑêûîôâÊÛÎÔÂëÿüïöäËYÜÏÖÄçÇ\s]+?", string.Empty);
+            else
+                ret = System.Text.RegularExpressions.Regex.Replace(ret, @"[^0-9a-zA-ZéúíóáÉÚÍÓÁèùìòàÈÙÌÒÀõãñÕÃÑêûîôâÊÛÎÔÂëÿüïöäËYÜÏÖÄçÇ]+?", string.Empty);
+
+            return ret;
+        }
+
+        /// <summary>
+        /// Remove emoticons (emoji) from string
+        /// </summary>
+        /// <param name="input">Input/string complete to be removed the emoticons</param>        
+        /// <returns>Just string without emoticons</returns>
+        public static string RemoveEmoticons(this string input)
+        {
+            string ret = string.Empty;
+
+            /* ########################################################################
+             #                                                                        #
+             #  Obs: Description of each "group" Regex to be removed                  #
+             #                                                                        #
+             #   "[\x1F600-\x1F64F]" ==> Emoticons                                    #
+             #   "[\x1F300-\x1F5FF]" ==> Miscellaneous Symbols and Pictographs        #
+             #   "[\x1F680-\x1F6FF]" ==> Match Transport And Map Symbols              #
+             #   "[\x1F1E0-\x1F1FF]" ==> Match flags (iOS)                            #
+             #                                                                        #
+              ######################################################################### */
+
+            string regexEmoticons = "[\x1F600-\x1F64F\x1F300-\x1F5FF\x1F680-\x1F6FF\x1F1E0-\x1F1FF?!( !@#$%¨&*\"'!;.:,?+\\/\t\r\v\f\n)?!-]";
+            System.Text.RegularExpressions.Regex regex = new System.Text.RegularExpressions.Regex(regexEmoticons);
+
+
+            System.Text.RegularExpressions.MatchCollection matches = regex.Matches(ret);
+            foreach (System.Text.RegularExpressions.Match match in matches)
+                ret += match.Value;
+
+            return ret;
+        }
+
+        /// <summary>
+        /// Convert string to decimal exchanging comma to dot
+        /// </summary>
+        /// <param name=value"></param>
+        /// <returns>Retorna o número pronto para ser usado</returns>
+        public static decimal ExchangeCommaToDotAndReturnsDecimal(this string value)
+        {
+            decimal conversor = 0.00M;
+            //Substitui as "," por "." e converte para AllowDecimalPoint
+            if (decimal.TryParse(value.Replace(',', '.'), System.Globalization.NumberStyles.AllowDecimalPoint, System.Globalization.CultureInfo.InvariantCulture, out conversor))
+            {
+                value = conversor.ToString();
+            }
+            //Retorna o decimal
+            return Decimal.Parse(value);
+        }
+
+        public enum DecimalSeparator
+        {
+            Comma,
+            Dot
+        }
+
+        /// <summary>
+        /// Convert decimal to string according to the desired decimal separator
+        /// </summary>
+        /// <param name="value">Decimal value</param>
+        /// <param name="decimalSeparator">Separador desejado</param>
+        /// <returns>Retorna o decimal em formato de string com o separador de decimal desejado</returns>
+        public static string ReturnsStringWithDesiredDecimalSeparator(this decimal value, DecimalSeparator decimalSeparator = DecimalSeparator.Dot)
+        {
+            try
+            {
+                if (decimalSeparator == DecimalSeparator.Dot)
+                    //To decimal be dotasso pass the culture as Invariant
+                    return value.ToString(CultureInfo.InvariantCulture.NumberFormat);
+                else
+                    //To decimal be comma pass the culture as pt-BR
+                    return value.ToString(new CultureInfo("pt-BR"));
+            }
+            catch
+            {
+                return value.ToString();
+            }
+        }
     }
 }
